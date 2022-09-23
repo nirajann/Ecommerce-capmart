@@ -1,3 +1,5 @@
+import 'package:capmart/models/category_model.dart';
+import 'package:capmart/models/models.dart';
 import 'package:capmart/screens/home/homescreen.dart';
 import 'package:capmart/screens/screens.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,16 +14,14 @@ class AppRouter {
     switch (settings.name) {
       case '/':
         return HomeScreen.route();
-      case HomeScreen.routename:
-        return HomeScreen.route();
       case CartScreen.routename:
         return CartScreen.route();
       case WishlistScreen.routename:
         return WishlistScreen.route();
       case CatalogScreen.routename:
-        return CatalogScreen.route();
+        return CatalogScreen.route(category: settings.arguments as Category);
       case ProductScreen.routename:
-        return ProductScreen.route();
+        return ProductScreen.route(product: settings.arguments as Product);
       default:
         return _errorRoute();
     }

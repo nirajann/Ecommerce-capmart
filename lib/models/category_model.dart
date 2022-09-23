@@ -19,28 +19,40 @@ class Category extends Equatable {
 
   static List<Category> categories = [
     Category(
-        name: "name1",
-        imgURL: 'https://rukminim1.flixcart.com/image/332/398/l0sgyvk0/cap/6/d/2/free-casual-cap-polo-original-imagchxw8dyet3zu.jpeg?q=50'
+        name: "Baseball Caps",
+        imgURL: 'https://th-thumbnailer.cdn-si-edu.com/R8zXPSSeXqE7HFvn7Icv1NnR-6s=/fit-in/1600x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/14/55/145500e8-ef9e-4d39-bbeb-965d1de2794f/baseballopener_copy.jpg'
     ),
     Category(
-        name: "name1",
-        imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRQKRvFbmi35rxK7A44h8FtG_KSYSgURCwUhE31reqebWpWlOYT03aML7Oiu5-C4O456g&usqp=CAU'
+        name: "Trucker Caps",
+        imgURL: 'https://www.bfgcdn.com/1500_1500_90/204-1695-3611/patagonia-kids-trucker-hat-cap.jpg'
     ),
     Category(
-        name: "name1",
-        imgURL: 'https://cdn.shopify.com/s/files/1/0648/4531/6322/products/f809786cbc72de2417982827da4ad379.jpg?v=1653537739&width=1920'
+        name: "Dad Caps",
+        imgURL: 'https://www.thestudio.com/wp-content/uploads/2022/04/Custom-Dad-Hats-Header.webp'
     ),
     Category(
-        name: "name1",
-        imgURL: 'https://magiclink.speedsize-aws.com/80108e9c-8026-45f2-a6ba-296e20837a59/https://neweracap.ph/__resources/webdata/images/collaborations/7_home_.png/mxw_640,f_auto'
+        name: "Bucket Hats",
+        imgURL: 'https://static-01.daraz.com.np/p/c19fe2985ec604821498f3d7acceb923.jpg'
     ),
     Category(
-        name: "name1",
-        imgURL: 'https://cdn.shopify.com/s/files/1/0507/5009/5551/products/St.-Catharines-Stompers-HOMETOWN-COLLECTION-New-Era-59Fifty-Fitted-Hat-_BLACK-PINE-NEEDLE-GREEN-NEW-OLIVE-Under-Brim_-1_1024x1024.jpg?v=1663188179'
+        name: "Snapback Caps",
+        imgURL: 'https://backyarddesign.de/wp-content/uploads/2019/04/Backyard-Design-Logo-Snapback-Cap-Motocross-MX-Schwarz-Red-Black-Red-BYD.png'
     ),
     Category(
-        name: "name1",
-        imgURL: 'https://i.pinimg.com/236x/93/a9/41/93a94139709d4ba043618670713e1277.jpg'
+    name: "Kids Caps",
+    imgURL: 'https://www.soulbuddycaps.com/wp-content/uploads/soulbuddy-kids-cap-mintgruen-front-600x600.jpg'
+    ),
+    Category(
+    name: "Paparazzi",
+    imgURL: 'https://cdn.shopify.com/s/files/1/1775/0513/products/53192a6d-a0bd-5cb2-9187-13f6cca9b2f3_560x.jpg?v=1566245813'
+    ),
+    Category(
+        name: "Flipped Kids Caps",
+        imgURL: 'https://cdn.shopify.com/s/files/1/0661/7423/products/flipped-kids-cap-right.jpg?v=1615535162'
+    ),
+    Category(
+        name: "Beanies",
+        imgURL: 'https://bartlettsfarm.com/wp-content/uploads/2020/01/Beanie-WS.jpg'
     )
   ];
 
