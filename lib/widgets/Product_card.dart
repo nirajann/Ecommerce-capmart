@@ -5,7 +5,8 @@ import '../models/product_model.dart';
 class ProductCard extends StatelessWidget {
   final double widthFactor;
   final Product product;
-  const ProductCard({Key? key, required this.product,this.widthFactor = 2.5}) : super(key: key);
+  final bool isWishlist;
+  const ProductCard({Key? key, required this.product,this.widthFactor = 2.5,this.isWishlist = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,9 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                      child: IconButton(onPressed: (){}, icon: Icon(Icons.add_circle, color: Colors.white,)))
+                      child: IconButton(onPressed: (){}, icon: Icon(Icons.add_circle, color: Colors.white,))),
+                  isWishlist?  Expanded(
+                      child: IconButton(onPressed: (){}, icon: Icon(Icons.delete, color: Colors.white,))): SizedBox(),
                 ],
               ),
             ),
