@@ -1,3 +1,4 @@
+import 'package:capmart/blocs/cart/cart_bloc.dart';
 import 'package:capmart/blocs/wishlist/wishlist_bloc.dart';
 import 'package:capmart/config/app_router.dart';
 import 'package:capmart/config/theme.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => WishlistBloc()..add(StartWishlist())),
+          BlocProvider(create: (_) => CartBloc()..add(LoadCart())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

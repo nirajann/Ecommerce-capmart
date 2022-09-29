@@ -38,13 +38,13 @@ class HomeScreen extends StatelessWidget {
           SectionTitle(title: "RECOMMENDED CAPS"),
           //product card
           // ProductCard(product: Product.products[0],)
-          ProductCarousal(products: Product.products
+          ProductCarousel(products: Product.products
               .where((product) => product.isRecommended)
               .toList()),
           SectionTitle(title: "MOST POPULAR"),
           //product card
           // ProductCard(product: Product.products[0],)
-          ProductCarousal(products: Product.products
+          ProductCarousel(products: Product.products
               .where((product) => product.isPopular)
               .toList()),
 

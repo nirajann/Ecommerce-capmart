@@ -1,5 +1,10 @@
-import 'package:capmart/widgets/widget.dart';
+import 'package:capmart/blocs/cart/cart_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../widgets/Product_card.dart';
+import '../../widgets/custom_appbar.dart';
+import '../../widgets/custom_navbar.dart';
 
 class CartScreen extends StatelessWidget {
   static const String routename = '/cart';
@@ -7,17 +12,81 @@ class CartScreen extends StatelessWidget {
   static Route route() {
     return MaterialPageRoute(
       settings: RouteSettings(name: routename),
-      builder: (_) => CartScreen(),
+      builder: (context) => CartScreen(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: "Cart",
-      ),
+      appBar: CustomAppBar(title: 'Cart'),
       bottomNavigationBar: customnavbar(),
+      body: BlocBuilder<CartBloc, CartState>(
+        builder: (context, state) {
+          if (state is CartLoading) {
+            return Center(
+              child: CircularProgressIndicator(
+                color: Colors.black,
+              ),
+            );
+          }
+          if (state is CartLoaded) {
+            Map cart = state.cart.productQuantity(state.cart.products);
+
+            return Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+                vertical: 10.0,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        state.cart.freeDeliveryString,
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/');
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black,
+                          shape: RoundedRectangleBorder(),
+                          elevation: 0,
+                        ),
+                        child: Text(
+                          'Add More Items',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline5!
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  SizedBox(
+                    height: 400,
+                    child: ListView.builder(
+                      itemCount: cart.keys.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ProductCard.cart(
+                          product: cart.keys.elementAt(index),
+                          quantity: cart.values.elementAt(index),
+                        );
+                      },
+                    ),
+                  ),
+                  // OrderSummary(),
+                ],
+              ),
+            );
+          }
+          return Text('Something went wrong');
+        },
+      ),
     );
   }
 }

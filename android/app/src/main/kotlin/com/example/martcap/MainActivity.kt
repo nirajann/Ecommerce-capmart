@@ -1,4 +1,4 @@
-package com.example.capmart
+package com.example.martcap
 
 import io.flutter.embedding.android.FlutterActivity
 

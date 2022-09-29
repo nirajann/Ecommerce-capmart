@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.capmart">
+    package="com.example.martcap">
    <application
         android:label="capmart"
         android:name="${applicationName}"

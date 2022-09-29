@@ -6,7 +6,6 @@ import '../../widgets/custom_appbar.dart';
 import '../../widgets/custom_navbar.dart';
 import '../../widgets/hero_carousal_card.dart';
 import '/models/models.dart';
-import '/widgets/widgets.dart';
 
 class ProductScreen extends StatelessWidget {
   static const String routename = '/product';
